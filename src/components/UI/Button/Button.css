@@ -1,0 +1,19 @@
+.button {
+  background-color: brown;
+  padding: 1rem 2rem;
+  outline: none;
+  border: none;
+  color: aliceblue;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: rgba(166, 38, 38, 0.9);
+  color: white;
+  transition: 0.2s ease-in;
+}
+.button:focus,
+.button:active {
+  background-color: black;
+  color: white;
+}
