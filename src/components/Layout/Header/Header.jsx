@@ -1,10 +1,11 @@
 import ReactDOM from "react-dom";
 import React, { useContext, useRef, useState } from "react";
 import classes from "./Header.module.css";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import Button from "../../UI/Button/Button";
 import context from "../../../store/Context";
 import Model from "../../UI/Model/Model";
+import { products as data } from "../../../data";
 import {
   BagFill,
   CartFill,
@@ -21,6 +22,7 @@ function Header() {
   const ctx = useContext(context);
   const navRef = useRef();
   const searchRef = useContext(context);
+  const navigate = useNavigate();
   const NavLinks = (
     <ul>
       <li>
@@ -56,11 +58,16 @@ function Header() {
   function SearchBarHandler(e) {
     e.preventDefault();
     setShowSearch(true);
-    // navRef.current.style.display = "flex";
   }
   function SearchHandler(e) {
     e.preventDefault();
     console.log(e.target.elements[0]);
+    let searchItem = String(e.target.elements[0].value).toLowerCase();
+    console.dir(searchItem);
+    let products = data.filter(
+      (product) => String(product.name).toLowerCase() === searchItem
+    );
+    navigate("products", { state: { products } });
   }
   function CloseMenuBarHandler(e) {
     e.preventDefault();
@@ -89,6 +96,7 @@ function Header() {
               <form onSubmit={SearchHandler}>
                 <Input
                   className={classes.input}
+                  name="searchInput"
                   attributes={{
                     type: "search",
                     placeholder: "Search products ....",
@@ -108,7 +116,9 @@ function Header() {
 
       <header className={classes.header}>
         <NavLink to="/" style={{ textDecoration: "none" }}>
-          <label id={classes.logo}>My Bags</label>
+          <label id={classes.logo}>
+            <BagFill /> My Bags
+          </label>
         </NavLink>
         <div className={classes.navLinks}>{NavLinks}</div>
         <div className={classes.iconbtn}>

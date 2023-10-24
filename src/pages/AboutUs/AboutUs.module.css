@@ -1,3 +1,9 @@
 .aboutPage {
-  min-height: 70vh;
+  position: relative;
+  min-height: 100vh;
+  align-content: center;
+  padding: 10px;
+
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: white;
 }

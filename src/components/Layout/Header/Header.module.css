@@ -17,6 +17,12 @@
 .input {
   margin: 4rem auto;
   border-radius: 0.5rem;
+  background-color: rgba(255, 231, 199, 0.7);
+  backdrop-filter: blur(3px);
+}
+.input:hover {
+  background-color: rgba(253, 224, 185, 1);
+  transition: 0.2s;
 }
 
 #logo {
@@ -24,8 +30,17 @@
   text-shadow: 2px 0 7px rgba(155, 116, 149, 0.6);
   font-size: 25px;
   font-weight: 600;
-  margin-left: 1.5rem;
+  margin-left: 1.2rem;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  justify-content: center;
   /* flex-basis: 300px; */
+}
+#logo:hover {
+  color: rgba(59, 22, 16, 0.6);
+  text-shadow: 2px 0 7px rgba(59, 22, 16, 0.6);
+  transition: 0.2s;
 }
 
 .navLinks {
@@ -137,7 +152,8 @@ form {
   justify-self: center;
   align-items: center;
   justify-content: center;
-  background-color: rgb(130, 163, 152);
+  background-color: rgb(130, 163, 152, 0.7);
+  backdrop-filter: blur(3px);
   border-radius: 0.7rem;
 }
 

@@ -3,7 +3,9 @@ import classes from "./Footer.module.css";
 function Footer() {
   return (
     <div className={classes.footer}>
-      <h2>Footer</h2>
+      <h4 style={{ alignContent: "center", paddingTop: "10px" }}>
+        © 2023 My Bags. All Rights Reserved.
+      </h4>
     </div>
   );
 }

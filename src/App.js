@@ -11,6 +11,7 @@ import ContactUs from "./pages/ContactUs/ContactUs";
 import context from "./store/Context";
 import { useContext } from "react";
 import Cart from "./components/Cart/Cart";
+import Product from "./pages/product/Product";
 function App() {
   const ctx = useContext(context);
   console.log(ctx);
@@ -19,14 +20,15 @@ function App() {
       {ctx.showCart && <Cart />}
       <BrowserRouter>
         <Header />
-
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/products" element={<Products products={products} />} />
-          <Route path="/about-us" element={<AboutUs />} />
-          <Route path="/contact-us" element={<ContactUs />} />
-          {/* <Route path="/" element={<HomePage />} /> */}
-        </Routes>
+        <main className="main">
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="products" element={<Products products={products} />} />
+            <Route path="about-us" element={<AboutUs />} />
+            <Route path="contact-us" element={<ContactUs />} />
+            <Route path="products/:id" element={<Product />} />
+          </Routes>
+        </main>
         <Footer />
       </BrowserRouter>
     </div>
