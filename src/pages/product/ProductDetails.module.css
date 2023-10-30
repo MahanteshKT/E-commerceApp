@@ -5,7 +5,9 @@
   justify-content: center;
   align-items: center;
   gap: 1px;
+  overflow: hidden;
 }
+
 .productImg {
   background-color: rgb(239, 255, 250);
   border-radius: 0.2rem;
@@ -46,4 +48,25 @@
   display: flex;
   gap: 10px;
   justify-content: center;
+}
+@media screen and (width<800px) {
+  .productContainer {
+    display: flex;
+    flex-direction: column;
+    /* width: 90vh; */
+  }
+  .productImg {
+    width: 100%;
+  }
+  .productDetails {
+    height: 60vh;
+    width: 100%;
+    flex-direction: row;
+
+    /* border: 1px solid red; */
+  }
+  .buttonList {
+    /* border: 1px solid red; */
+    /* flex-direction: column; */
+  }
 }

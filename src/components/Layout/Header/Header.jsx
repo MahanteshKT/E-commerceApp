@@ -64,8 +64,8 @@ function Header() {
     console.log(e.target.elements[0]);
     let searchItem = String(e.target.elements[0].value).toLowerCase();
     console.dir(searchItem);
-    let products = data.filter(
-      (product) => String(product.name).toLowerCase() === searchItem
+    let products = data.filter((product) =>
+      String(product.name).toLowerCase().includes(searchItem)
     );
     navigate("products", { state: { products } });
   }

@@ -17,7 +17,7 @@ function ProductsItem(props) {
   };
   const onClickHandler = (e) => {
     e.preventDefault();
-    navigate(`products/${props.product.id}`);
+    navigate(`/products/${props.product.id}`);
   };
   return (
     <div className={classes.productContainer}>

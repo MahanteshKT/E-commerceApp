@@ -5,6 +5,9 @@
   height: 15rem;
   /* max-height: 20rem; */
 }
+.productDetails {
+  cursor: pointer;
+}
 
 .productImg {
   background-color: rgb(208, 202, 213);

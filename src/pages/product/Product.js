@@ -22,7 +22,7 @@ function Product() {
 
   return (
     <div className={classes.product}>
-      <ProductDetails product={product} />
+      <ProductDetails style={{ width: "100%" }} product={product} />
     </div>
   );
 }
